@@ -16,9 +16,29 @@
 
             Ability to stream
 
-##### 
+##### Generally, you will access the MediaDevices singleton object using navigator.mediaDevices, like this
 
-##### 
+    '''
+        const constraints = {
+            audio: true,
+            video: true,
+        };
+
+        async function getMedia(constraints) {
+            let stream = null;
+
+            try {
+                stream = await navigator.mediaDevices.getUserMedia(constraints);
+                /* use the stream */
+            } catch (err) {
+                /* handle the error */
+            }
+        }
+    '''
+
+##### Media constraints include:
+
+    
 
 #####
 
@@ -27,6 +47,8 @@
 
 #### References:
 
-##### [MdnDocs](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API)
+##### [MediaDevices](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
+
+##### [WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API)
 
 ##### [Udemy](https://www.udemy.com/share/109xoy3@XaqwSTKPHaGE3sODp4cPc--pmaOhLFvrcRPTj0ujhmmT5QK1Tkbts5O4_3JSTR-pTQ==/)
