@@ -1,0 +1,4 @@
+MediaStreamTrack.stop()
+    Stops playing the source associated to the track, both the source and the track are disassociated.
+    The track state is set to ended.
+

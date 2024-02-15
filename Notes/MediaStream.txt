@@ -1,0 +1,11 @@
+
+Method that ---> Returns a list of all MediaStreamTrack objects stored in the MediaStream object.
+
+    1.  MediaStream.getTracks()
+            "regardless" of the value of the kind attribute.
+
+    2.  MediaStream.getVideoTracks()
+            that have their kind attribute set to "video". 
+
+    3.  MediaStream.getAudioTracks()
+            that have their kind attribute set to "audio". 
