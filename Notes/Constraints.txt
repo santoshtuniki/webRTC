@@ -1,0 +1,44 @@
+Constraints:
+An object specifying the types of media to request, along with any requirements for each type.
+The constraints parameter is an object with two members: 
+    1.  video
+    2.  audio
+Either or both must be specified. 
+
+If the browser cannot find all media tracks with the specified types that meet the constraints given, 
+then the returned promise is rejected with "NotFoundError" DOMException.
+
+
+************************************************************************** &&& **************************************************************************
+
+
+Media constraints include:
+
+//  Prefer camera resolution nearest to 1280x720.
+{
+    audio: true,
+    video: {
+        width: 1280,
+        height: 720,
+    },
+}
+
+//  Desirable Lower frame-rates
+{
+    video:  { 
+        frameRate: { ideal: 10, max: 15 } 
+    },
+}
+
+
+//  On mobile devices:
+
+Front Camera: "user"
+Rear Camera: "Environment
+
+{
+  audio: true,
+  video: { facingMode: front ? "user" : "environment" }
+}
+
+************************************************************************** &&& **************************************************************************
