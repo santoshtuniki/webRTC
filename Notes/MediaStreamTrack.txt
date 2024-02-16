@@ -2,3 +2,12 @@ MediaStreamTrack.stop()
     Stops playing the source associated to the track, both the source and the track are disassociated.
     The track state is set to ended.
 
+MediaStreamTrack.getConstraints() 
+    Returns a "MediaTrackConstraints" object containing the set of constraints 
+    most recently established for the track using a prior call to applyConstraints().
+
+MediaStreamTrack: getCapabilities()
+    Returns a MediaTrackCapabilities object which specifies the values or range of values for each constrainable property, 
+    based upon the platform and user agent.
+    ( Browser's capabilities )
+

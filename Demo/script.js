@@ -12,7 +12,6 @@ const getMicOrCamera = async () => {
     try {
         // Get video & audio stream
         stream = await navigator.mediaDevices.getUserMedia(constraints);
-        console.log('stream:\n', stream);
         changeButtons([
             'green', 'blue', 'blue', 'grey', 'grey', 'grey', 'grey', 'grey'
         ]);
@@ -55,3 +54,5 @@ document.querySelector('#share').addEventListener('click', (e) => getMicOrCamera
 document.querySelector('#show-video').addEventListener('click', (e) => showMyFeed());
 
 document.querySelector('#stop-video').addEventListener('click', (e) => stopMyFeed());
+
+document.querySelector('#change-size').addEventListener('click', (e) => changeVideoSize());

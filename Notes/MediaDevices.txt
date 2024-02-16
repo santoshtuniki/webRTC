@@ -1,45 +1,8 @@
-Navigator:
-The Navigator interface represents the state and the identity of the user agent. 
-It allows scripts to query it and to register themselves to carry on some activities.
-
-Navigator.geolocation 
-    ---> Returns a "Geolocation" object allowing accessing the location of the device.
-
-Navigator.mediaDevices 
-    ---> Returns a "reference" to a **MediaDevices** object which can then be used to get information about available media devices 
+MediaDevices.getUserMedia()
+    With the user's permission through a prompt, turns on a camera and/or a microphone on the system & 
+    provides a **MediaStream** containing a video track and/or an audio track with the input.
 
 
-************************************************************************** &&& **************************************************************************
-
-
-MediaDevices:
-The MediaDevices interface of the "Media Capture and Streams API" provides **access** to connected media input devices & 
-lets you obtain access to any hardware source of media data.
-
-
-getUserMedia()
-    ---> With the user's permission through a prompt, turns on a camera and/or a microphone on the system & 
-            provides a **MediaStream** containing a video track and/or an audio track with the input.
-
-
-************************************************************************** &&& **************************************************************************
-
-
-MediaStream:
-The MediaStream interface of the "Media Capture and Streams API" represents a **stream** of media content. 
-A stream consists of several **tracks**, such as video or audio tracks.
-Each track is specified as an instance of **MediaStreamTrack**.
-
-
-************************************************************************** &&& **************************************************************************
-
-
-MediaStreamTrack:
-The MediaStreamTrack interface of the "Media Capture and Streams API" represents a **single** media track within a stream.
-Typically, these are audio or video tracks, but other track types may exist as well.
-
-
-************************************************************************** &&& **************************************************************************
-
-
-        Navigator   --->    MediaDevices    --->    MediaStream     --->    MediaStreamTrack
+MediaDevices.getSupportedConstraints()
+    Returns a new object based on the **MediaTrackSupportedConstraints** dictionary,
+    listing the constraints supported by the "user agent". 
