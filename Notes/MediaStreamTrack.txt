@@ -11,3 +11,7 @@ MediaStreamTrack: getCapabilities()
     based upon the platform and user agent.
     ( Browser's capabilities )
 
+MediaStreamTrack: applyConstraints()
+    Applies a set of constraints to the track. 
+    These constraints let the website or app establish ideal values and acceptable ranges of values for the 
+    constrainable properties of the track, such as frame rate, dimensions, echo cancellation, and so forth.
