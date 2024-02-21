@@ -1,14 +1,26 @@
-MediaDevices.getUserMedia()
+getUserMedia()
     With the user's permission through a prompt, turns on a camera and/or a microphone on the system & 
     provides a **MediaStream** containing a video track and/or an audio track with the input.
+    A *Promise* whose fulfillment handler receives a MediaStream object when the requested media has successfully been obtained.
 
 
-MediaDevices.getSupportedConstraints()
+getSupportedConstraints()
     Returns a new object based on the **MediaTrackSupportedConstraints** dictionary,
     listing the constraints supported by the "user agent". 
 
 
-MediaDevices: getDisplayMedia()
+getDisplayMedia()
     Prompts the user to select and grant permission to capture the contents of a display or portion thereof (such as a window) as a "MediaStream".
     A *Promise* that resolves to a MediaStream containing a video track whose contents come from a user-selected screen area, 
     as well as an optional audio track.
+
+
+enumerateDevices()
+    Requests a list of the currently available media input and output devices, such as microphones, cameras, headsets, and so forth. 
+    The returned *Promise* is resolved with an **array** of "MediaDeviceInfo" objects describing the devices.
+        Each object in the array describes one of the available media input and output devices. 
+        The order is significant — the "default" capture devices will be listed **first**.
+
+
+HTMLMediaElement.setSinkId() 
+    The Audio Output Devices API sets the ID of the audio device to use for output and returns a *Promise*.

@@ -1,5 +1,5 @@
-
 const shareScreen = async () => {
+
     const options = {
         video: true,
         audio: false,
@@ -16,4 +16,5 @@ const shareScreen = async () => {
     changeButtons([
         'green', 'green', 'blue', 'blue', 'green', 'green', 'green', 'green'
     ]);
-}
+
+};

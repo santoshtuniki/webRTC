@@ -52,16 +52,15 @@ const stopMyFeed = () => {
 document.querySelector('#share').addEventListener('click', (e) => getMicOrCamera());
 
 document.querySelector('#show-video').addEventListener('click', (e) => showMyFeed());
-
 document.querySelector('#stop-video').addEventListener('click', (e) => stopMyFeed());
-
 document.querySelector('#change-size').addEventListener('click', (e) => changeVideoSize());
 
 document.querySelector('#start-record').addEventListener('click', (e) => startRecording());
-
 document.querySelector('#stop-record').addEventListener('click', (e) => stopRecording());
-
 document.querySelector('#play-record').addEventListener('click', (e) => playRecording());
 
 document.querySelector('#share-screen').addEventListener('click', (e) => shareScreen());
 
+document.querySelector('#audio-input').addEventListener('change', (e) => changeAudioInput(e));
+document.querySelector('#audio-output').addEventListener('change', (e) => changeAudioOutput(e));
+document.querySelector('#video-input').addEventListener('change', (e) => changeVideoInput(e));

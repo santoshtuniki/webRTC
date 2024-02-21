@@ -15,3 +15,12 @@
 #vid-height {
     width: 50px;
 }
+
+label {
+    margin: 5px 0px;
+}
+
+select {
+    display: block;
+    min-width: 250px;
+}

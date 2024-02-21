@@ -1,6 +1,7 @@
 const supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
 
 const changeVideoSize = () => {
+    
     stream.getVideoTracks().forEach(track => {
         const height = document.getElementById("vid-height").value;
         const width = document.getElementById("vid-width").value;
@@ -18,6 +19,6 @@ const changeVideoSize = () => {
             // aspectRatio: 10  // Ratio of width to height
         };
         track.applyConstraints(vConstraints)
-    })
-}
+    });
 
+};
