@@ -3,3 +3,7 @@
 ##### To run on server:
 
     npm run dev
+
+##### To see file:
+
+    http://localhost:3000/
