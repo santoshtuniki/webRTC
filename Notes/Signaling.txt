@@ -1,0 +1,36 @@
+Signaling and video calling
+
+    WebRTC allows real-time, peer-to-peer, media exchange between two devices. 
+    
+    A *connection* is established through a discovery and negotiation process called "signaling". 
+
+    Signaling involves both devices connecting to a third, mutually agreed-upon server. (Signaling Server)
+    Through this third server, the two devices can locate one another, and exchange negotiation messages.
+
+    A signaling server's job is to serve as an "intermediary" to let two peers find and establish a connection 
+    while minimizing exposure of potentially private information as much as possible. 
+
+    
+SDP (Session Description Protocol) 
+
+    The standard describing a peer-to-peer connection. 
+    
+    SDP contains the codec, source address, and timing information of audio and video.
+
+    WebRTC uses SDP as a way of "describing" a session.
+
+
+ICE (Interactive Connectivity Establishment) 
+
+    A framework used by WebRTC (among other technologies) for connecting two peers, 
+    regardless of network topology (usually for audio and video chat). 
+    
+    This protocol lets two peers "find" and establish a connection with one another even though 
+    they may both be using NAT to share a global IP address with other devices on their respective local networks.
+
+
+NAT (Network Address Translation) 
+
+    A technique for letting multiple computers share an IP address. 
+    
+    NAT assigns unique addresses to each computer on the local network and adjusts incoming/outgoing network traffic to send data to the right place.
