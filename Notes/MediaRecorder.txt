@@ -7,3 +7,7 @@ MediaStream Recording API
     
     You can then process the data further or write it to file as desired.
 
+
+window.URL.createObjectURL() 
+
+    Static method creates a string containing a URL representing the object given in the parameter.

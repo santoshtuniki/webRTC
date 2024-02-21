@@ -1,7 +1,7 @@
 const videoEl = document.querySelector('#my-video');
 
-
 let stream = null;
+let mediaStream = null;
 
 const constraints = {
     audio: true,
@@ -27,7 +27,7 @@ const showMyFeed = () => {
         return;
     }
     // This will set our stream into our video tag
-    videoEl.srcObject = stream
+    videoEl.srcObject = stream;
     changeButtons([
         'green', 'green', 'blue', 'blue', 'blue', 'grey', 'grey', 'blue'
     ]);
@@ -62,3 +62,6 @@ document.querySelector('#start-record').addEventListener('click', (e) => startRe
 document.querySelector('#stop-record').addEventListener('click', (e) => stopRecording());
 
 document.querySelector('#play-record').addEventListener('click', (e) => playRecording());
+
+document.querySelector('#share-screen').addEventListener('click', (e) => shareScreen());
+

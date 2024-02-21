@@ -6,3 +6,9 @@ MediaDevices.getUserMedia()
 MediaDevices.getSupportedConstraints()
     Returns a new object based on the **MediaTrackSupportedConstraints** dictionary,
     listing the constraints supported by the "user agent". 
+
+
+MediaDevices: getDisplayMedia()
+    Prompts the user to select and grant permission to capture the contents of a display or portion thereof (such as a window) as a "MediaStream".
+    A *Promise* that resolves to a MediaStream containing a video track whose contents come from a user-selected screen area, 
+    as well as an optional audio track.
