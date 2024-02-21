@@ -56,3 +56,9 @@ document.querySelector('#show-video').addEventListener('click', (e) => showMyFee
 document.querySelector('#stop-video').addEventListener('click', (e) => stopMyFeed());
 
 document.querySelector('#change-size').addEventListener('click', (e) => changeVideoSize());
+
+document.querySelector('#start-record').addEventListener('click', (e) => startRecording());
+
+document.querySelector('#stop-record').addEventListener('click', (e) => stopRecording());
+
+document.querySelector('#play-record').addEventListener('click', (e) => playRecording());

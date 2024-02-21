@@ -5,8 +5,8 @@ const changeVideoSize = () => {
         const height = document.getElementById("vid-height").value;
         const width = document.getElementById("vid-width").value;
         const capabilities = track.getCapabilities();
-        console.log(capabilities);
-        
+        // console.log(capabilities);
+
         const vConstraints = {
             height: {
                 exact: height < capabilities.height.max ? height : capabilities.height.max

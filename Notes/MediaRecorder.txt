@@ -1,0 +1,9 @@
+MediaStream Recording API
+
+    The MediaStream Recording API is comprised of a single major interface, "MediaRecorder", 
+    which does all the work of taking the data from a MediaStream and delivering it to you for processing. 
+    
+    The data is delivered by a series of dataavailable events, already in the format you specify when creating the MediaRecorder. 
+    
+    You can then process the data further or write it to file as desired.
+
