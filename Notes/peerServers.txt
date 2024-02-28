@@ -1,0 +1,21 @@
+STUN (Session Traversal Utilities for NAT)
+
+    Helps devices behind Network Address Translation (NAT) discover their public IP addresses and ports.
+
+    Cannot bypass firewalls that block incoming connections
+
+
+TURN (Traversal Using Relays around NAT)
+
+    Acts as a relay server to facilitate communication when a direct peer-to-peer connection is impossible.
+
+    Enables communication even when firewalls or strict NAT prevent direct connections.
+
+
+Choosing the right server:
+
+    STUN is preferred whenever possible due to its efficiency and lower resource usage.
+
+    TURN is used as a backup solution when a direct connection fails due to firewalls or strict NAT.
+
+In essence, STUN helps devices find each other, while TURN acts as a bridge when they can't connect directly.

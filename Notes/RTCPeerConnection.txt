@@ -1,0 +1,34 @@
+The RTCPeerConnection interface represents a WebRTC connection between the local computer and a remote peer. 
+
+It provides methods to connect to a remote peer, maintain and monitor the connection, and close the connection once it's no longer needed.
+
+    new RTCPeerConnection(configuration)
+
+
+configuration:
+
+    iceServers (Optional):
+        
+        An "array" of objects, each describing one server which may be used by the ICE agent.
+        These are typically STUN and/or TURN servers.
+
+
+An **icecandidate** event is sent to an RTCPeerConnection when:
+
+    1.  An RTCIceCandidate has been identified and added to the local peer by a call to RTCPeerConnection.setLocalDescription(),
+
+    2.  Every RTCIceCandidate correlated with a particular username fragment and password combination (a generation) has been so identified and added,
+
+    3.  All ICE gathering on all transports is complete.
+
+In the first two cases, the event handler should transmit the candidate to the remote peer over the signaling channel 
+so the remote peer can add it to its set of remote candidates.
+
+This event is not cancelable and does not bubble.
+
+
+createOffer()
+
+    Initiates the creation of an "SDP offer" for the purpose of starting a new WebRTC connection to a remote peer.
+
+    Returns a **Promise** which, when the offer has been created, is resolved with a "RTCSessionDescription" object containing the newly-created offer.

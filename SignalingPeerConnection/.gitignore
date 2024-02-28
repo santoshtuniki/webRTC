@@ -1,3 +1,11 @@
 node_modules/
 
 package-lock.json
+
+create-cert-key.pem
+
+create-cert.pem
+
+create-ca-key.pem
+
+create-ca.pem

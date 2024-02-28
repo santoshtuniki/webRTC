@@ -1,0 +1,14 @@
+addTrack() 
+
+    Adds a new media track to the set of tracks which will be transmitted to the other peer.
+
+
+setLocalDescription() 
+ 
+    Changes the local description associated with the connection. 
+    
+    This description specifies the properties of the local end of the connection, including the media format. 
+
+    Returns a *Promise* which is fulfilled once the description has been changed, "asynchronously".
+
+    The method takes a single parameter — **session description**
