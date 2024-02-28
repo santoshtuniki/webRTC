@@ -136,14 +136,10 @@ SIGNALING server has been waiting...
 
 22. CLIENT1 takes the answer & hands it to the pc.setRemoteDescription.
 
-
-| CANDIDATE | localDesc | remoteDesc |
-
-| --- | --- | --- | --- |
-
-| CLIENT1 | offer | answer |
-
-| CLIENT2 | answer | offer |
+    | CANDIDATE | localDesc | remoteDesc |
+    | --- | --- | --- | --- |
+    | CLIENT1 | offer | answer |
+    | CLIENT2 | answer | offer |
 
 
 23. 
