@@ -141,5 +141,4 @@ SIGNALING server has been waiting...
     CLIENT1  | offer | answer |
     CLIENT2  | answer        | offer       |
 
-
-23. 
+23. CLIENT1 waits for the tracks/ICE from remote
