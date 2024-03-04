@@ -12,3 +12,28 @@ setLocalDescription()
     Returns a *Promise* which is fulfilled once the description has been changed, "asynchronously".
 
     The method takes a single parameter — **session description**
+
+
+signalingState
+
+    Returns a "string" value describing the state of the signaling process on the local end of the connection,
+    
+    while connecting or reconnecting to another peer. 
+
+    Allowed Values:
+
+        1.  stable
+
+                -   There is no ongoing exchange of offer and answer underway. 
+
+        2.  have-local-offer
+
+                -   The local peer has called RTCPeerConnection.setLocalDescription()
+
+        3.  have-remote-offer
+
+                -   The remote peer has created an offer and used the signaling server to deliver it to the local peer
+
+        4.  have-local-pranswer
+
+                -   The offer sent by the remote peer has been applied and an answer has been created

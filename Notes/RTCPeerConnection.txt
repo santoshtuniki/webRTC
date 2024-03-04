@@ -32,3 +32,10 @@ createOffer()
     Initiates the creation of an "SDP offer" for the purpose of starting a new WebRTC connection to a remote peer.
 
     Returns a **Promise** which, when the offer has been created, is resolved with a "RTCSessionDescription" object containing the newly-created offer.
+
+
+createAnswer()
+
+    Creates an "SDP answer" to an offer received from a remote peer during the offer/answer negotiation of a WebRTC connection. 
+    
+    Returns a **Promise**, and then sent to the source of the offer to continue the negotiation process.
