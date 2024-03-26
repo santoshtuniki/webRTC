@@ -132,7 +132,7 @@ SIGNALING server has been waiting...
 
 - - - -
 
-21. SIGNALING server sends CLIENT1 the answer.
+21. SIGNALING server listens for the answer & sends CLIENT1 the answer.
 
 22. CLIENT1 takes the answer & hands it to the pc.setRemoteDescription.
 

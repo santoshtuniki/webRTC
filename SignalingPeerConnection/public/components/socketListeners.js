@@ -7,6 +7,15 @@ socket.on("newOfferAwaiting", (offers) => {
     createOfferEls(offers);
 })
 
+socket.on('answerResponse', (offerObj) => {
+    addAnswer(offerObj);
+})
+
+socket.on('receivedIceCandidateFromServer', (iceCandidate) => {
+    addNewIceCandidate(iceCandidate);
+    console.log('iceCandidate:\n', iceCandidate);
+})
+
 const createOfferEls = (offers) => {
     // Make green answer button for this new answer
     const answerEl = document.querySelector("#answer");

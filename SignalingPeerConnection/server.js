@@ -47,9 +47,37 @@ io.on("connection", (socket) => {
     })
 
     // A new client joined. If offers available, emit them out.
-    if(offers.length){
+    if (offers.length) {
         socket.emit("availableOffers", offers);
     }
+
+    socket.on("newAnswer", (offerObj, ackFunction) => {
+        // console.log(offerObj);
+
+        // emit answer to CLIENT1 via socketId
+        const socketToAnswer = connectedSockets.find((s) => s.userName === offerObj.offerUserName);
+        if (!socketToAnswer) {
+            console.log('No matching socket');
+            return;
+        }
+
+        // CLIENT1 socket.id found
+        const socketIdToAnswer = socketToAnswer.socketId;
+
+        // find offer we want to emit
+        const offerToUpdate = offers.find((offer) => offer.offerUserName === offerObj.offerUserName);
+        if (!offerToUpdate) {
+            console.log('No offer found');
+            return;
+        }
+
+        // send back to the answerer ice candidates we collected.
+        ackFunction(offerToUpdate.offerIceCandidate);
+
+        offerToUpdate.answer = offerObj.answer;
+        offerToUpdate.answerUserName = userName;
+        socket.to(socketIdToAnswer).emit("answerResponse", offerToUpdate);
+    })
 
     socket.on("newOffer", (newOffer) => {
         offers.push({
@@ -69,9 +97,31 @@ io.on("connection", (socket) => {
         const { iceCandidate, iceUserName, didIOffer } = iceObject;
 
         if (didIOffer) {
+            // This ICE is sent from the offerer. Send it to the answerer.
             const offerInOffers = offers.find((o) => o.offerUserName === iceUserName);
             if (offerInOffers) {
                 offerInOffers.offerIceCandidate.push(iceCandidate);
+                // 1. when answerer answers, all the ice candidates are sent
+                // 2. Any candidates that come after the offer is answered, will be passed through
+                if (offerInOffers.answerUserName) {
+                    // pass it through
+                    const socketToSendTo = connectedSockets.find((s) => s.userName === offerObj.answerUserName);
+                    if (socketToSendTo) {
+                        socket.to(socketToSendTo.socketId).emit('receivedIceCandidateFromServer', iceCandidate);
+                    } else {
+                        console.log('Ice candidate received, but could not find the answerer.');
+                    }
+                }
+            }
+        } else {
+            const offerInOffers = offers.find((offer) => offer.answerUserName === iceUserName);
+
+            // This ICE is sent from the answerer. Send it to the offerer.
+            const socketToSendTo = connectedSockets.find((s) => s.userName === offerInOffers.offerUserName);
+            if (socketToSendTo) {
+                socket.to(socketToSendTo.socketId).emit('receivedIceCandidateFromServer', iceCandidate);
+            } else {
+                console.log('Ice candidate received, but could not find the offerer.');
             }
         }
     })

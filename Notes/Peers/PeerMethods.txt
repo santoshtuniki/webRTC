@@ -37,3 +37,17 @@ signalingState
         4.  have-local-pranswer
 
                 -   The offer sent by the remote peer has been applied and an answer has been created
+
+
+addIceCandidate() 
+
+        The interface adds a "new remote candidate" to the connection's remote description, which describes the state of the remote end of the connection.
+
+
+track 
+        
+        sent to the "ontrack" event handler on RTCPeerConnections after a new track has been added to an RTCRtpReceiver which is part of the connection.
+
+        By the time this event is delivered, the new track has been fully added to the peer connection.
+
+
