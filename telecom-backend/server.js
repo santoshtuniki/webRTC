@@ -10,6 +10,9 @@ const key = fs.readFileSync("./certs/create-cert-key.pem");
 const cert = fs.readFileSync("./certs/create-cert.pem");
 
 const app = express();
+
+app.use(cors());
+app.use(express.json());
 app.use(express.static(__dirname + "/public"));
 
 const expressServer = https.createServer({ key, cert }, app);

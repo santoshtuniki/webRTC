@@ -7,7 +7,7 @@ require("dotenv").config();
 app.get("/user-link", (req, res) => {
     // data for end-user's appointment
     const apptData = {
-        professionalFullName: "Santosh T",
+        professionalsFullName: "Santosh T",
         apptDate: Date.now()
     };
 
@@ -17,9 +17,9 @@ app.get("/user-link", (req, res) => {
     res.send(`https://localhost:3000/join-video?token=${token}`);
 })
 
-app.get("/validate-link", (req, res) => {
-    // get token from url
-    const token = req.query.token;
+app.post("/validate-link", (req, res) => {
+    // get token from body
+    const token = req.body.token;
 
     // decode the token
     const decodedData = jwt.verify(token, process.env.SECRET_KEY);

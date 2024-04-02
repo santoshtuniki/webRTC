@@ -1,4 +1,4 @@
-STUN (Session Traversal Utilities for NAT)
+STUN (Session Traversal utils for NAT)
 
     Helps devices behind Network Address Translation (NAT) discover their public IP addresses and ports.
 
